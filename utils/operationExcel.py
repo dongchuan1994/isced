@@ -19,7 +19,8 @@ class OperationExcel:
             dict_i['Header'] = json.loads(dict_i['Header'])
             if dict_i['IsRun'] == 'y':
                 dict_i['Url'] = getUrl() + dict_i['Url']
-                dict_i['Data']['orgcode'] = getOrgCode()
+                dict_i['Header']['OrganId'] = getOrgCode()
+                dict_i['Data']['belongOrgId'] = getOrgCode()
                 result.append(dict_i)
         return  result
 
